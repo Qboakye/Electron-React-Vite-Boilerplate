@@ -11,7 +11,7 @@ To get started with the project, follow these steps:
 3. Open the `vite.config.js` file and locate the server port configuration. This is the port where the React application will be running.
 4. In the `package.json` file, navigate to the scripts section and ensure that the TCP port matches the one specified in the configuration file.
 5. Run `npm run dev` to start the development server.
-6. To build for production, run `npm run build` make sure all "your-icon" placeholder with the path to your icon.
+6. To build for production, run `npm run build`. Replace all "your-icon" placeholder in the build script with the path to your icon.
 
 #### 📋 Project Details
 
