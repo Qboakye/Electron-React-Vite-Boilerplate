@@ -1,0 +1,64 @@
+{
+  "name": "electron-react-vite",
+  "productName": "electron-react-vite",
+  "description": "An amazing app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "electron.cjs",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development concurrently \"npm:serve\" \"npm:electron\"",
+    "prod": "npm run build && npm run electron-build",
+    "serve": "vite",
+    "build": "cross-env NODE_ENV=production vite build",
+    "preview": "vite preview",
+    "electron": "wait-on tcp:6969 && electron .",
+    "electron-build": "cross-env NODE_ENV=production electron-builder"
+  },
+  "build": {
+    "appId": "electron-react-vite",
+    "mac": {
+      "icon": "your-icon"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "your-icon"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "your-icon",
+      "uninstallerIcon": "your-icon",
+      "uninstallDisplayName": "electron-react-vite"
+    },
+    "directories": {
+      "output": "out"
+    },
+    "files": [
+      "dist/**/*",
+      "electron.cjs",
+      "electron/**"
+    ]
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.0.0",
+    "builder": "^5.0.0",
+    "concurrently": "^8.0.1",
+    "cross-env": "^7.0.3",
+    "electron": "^24.3.1",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "vite": "^4.3.2",
+    "wait-on": "^7.0.1"
+  }
+}
